@@ -24,7 +24,7 @@ iv.) Lay the groundwork for future machine learning models to predict mTNBC prog
 
 ## 🛠️ Tools & Technologies  
 
-|** Tools**                      | **Description **|
+|**Tools**                      | **Description**|
 |---------------------------|---------------------------------------------------------------|
 | **R Programming**         | Used for data preprocessing, analysis, and visualization. |
 | **DESeq2**                | A Bioconductor package for differential gene expression analysis, especially for bulk-cell RNA-seq data. |
