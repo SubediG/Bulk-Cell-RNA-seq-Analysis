@@ -1,14 +1,12 @@
-
-
-# Setting working directory and reading file
-setwd("~/bulkcell/Triple-Negative-Breast-Cancer")
-
-metadata <- read.csv("GSE264108_readcounts.txt", sep="\t", row.names = 1)
+#Loading required library
 library(DESeq2)
 library(ggplot2)
 library(ggrepel)
 library(dplyr)
 library(pheatmap)
+
+#reading file
+metadata <- read.csv("GSE264108_readcounts.txt", sep="\t", row.names = 1)
 
 #Extracting gene names from the dataset as external gene id is provided in raw data
 gene_names <- metadata$external_gene_id
