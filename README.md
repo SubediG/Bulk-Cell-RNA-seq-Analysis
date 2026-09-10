@@ -2,15 +2,29 @@
 
 <div align="center">
 
-# GSE264108 Neutrophil Bulk RNA-seq Reanalysis
+# Transcriptomic Reanalysis of Circulating Neutrophils in Metastatic Triple-Negative Breast Cancer for repr
 
-**mTNBC vs Healthy Donors**
+### Reproducible analysis of GSE264108 and publication-guided reconstruction of transcriptomic results
 
-A reproducible, open-source reanalysis of **GSE264108** that approximates the differential-expression workflow and transcriptomic visualizations reported in the original study.
+A reproducible bulk RNA-seq reanalysis comparing circulating neutrophils from
+**metastatic triple-negative breast cancer (mTNBC)** patients and **healthy donors** to generate fig5a and fig5b of original paper.
 
-[View Paper](https://www.nature.com/articles/s41523-025-00721-2) ·
-[View GEO Dataset](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264108) ·
-[PubMed](https://pubmed.ncbi.nlm.nih.gov/39843922/)
+
+<p align="center">
+
+  <a href="https://www.nature.com/articles/s41523-025-00721-2">
+    <img src="https://img.shields.io/badge/View%20Paper-npj%20Breast%20Cancer-4C78A8?style=flat-square" alt="View Paper">
+  </a>
+
+  <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264108">
+    <img src="https://img.shields.io/badge/View%20GEO-GSE264108-59A14F?style=flat-square" alt="View GEO">
+  </a>
+
+  <a href="https://pubmed.ncbi.nlm.nih.gov/39843922/">
+    <img src="https://img.shields.io/badge/View%20PubMed-PMID%2039843922-79706E?style=flat-square" alt="View PubMed">
+  </a>
+
+</p>
 
 </div>
 
@@ -35,11 +49,11 @@ A reproducible, open-source reanalysis of **GSE264108** that approximates the di
 
 ---
 
-## About the Project
+<a id="about-the-project"></a>
+<img src="https://img.shields.io/badge/About%20the%20Project-1F4E79?style=for-the-badge" alt="About the Project">
 
 This project reanalyzes the publicly available neutrophil bulk RNA-seq dataset **GSE264108** from the study:
 
-> **Bakker NAM, Garner H, van Dyk E, et al.**  
 > *Triple-negative breast cancer modifies the systemic immune landscape and alters neutrophil functionality.*  
 > **npj Breast Cancer. 2025;11:5.**  
 > https://doi.org/10.1038/s41523-025-00721-2
@@ -57,7 +71,8 @@ The figures are not intended to be exact replicas of the original Qlucore output
 
 ---
 
-## Results
+<a id="results"></a>
+<img src="https://img.shields.io/badge/Results-1F4E79?style=for-the-badge" alt="Results">
 
 | Metric | Result |
 |---|---:|
@@ -99,7 +114,8 @@ This workflow identifies **122 differentially expressed genes (77 upregulated an
 
 ---
 
-## Built With
+<a id="built-with"></a>
+<img src="https://img.shields.io/badge/Built%20With-1F4E79?style=for-the-badge" alt="Built With">
 
 The analysis is implemented entirely in **R** using open-source packages.
 
@@ -116,7 +132,8 @@ The original publication used **DESeq2** for differential-expression analysis an
 
 ---
 
-## Getting Started
+<a id="getting-started"></a>
+<img src="https://img.shields.io/badge/Getting%20Started-1F4E79?style=for-the-badge" alt="Getting Started">
 
 Follow the steps below to run the analysis on your own computer.
 
@@ -131,7 +148,7 @@ Optional:
 
 - [RStudio Desktop](https://posit.co/download/rstudio-desktop/)
 
-Docker, Conda, Qlucore, and manual GEO downloads are **not required**.
+Manual GEO downloads are **not required**.
 
 ### Installation
 
@@ -190,7 +207,8 @@ The required GEO files are downloaded automatically during the first run.
 
 ---
 
-## Usage
+<a id="usage"></a>
+<img src="https://img.shields.io/badge/Usage-1F4E79?style=for-the-badge" alt="Usage">
 
 The workflow performs the following steps:
 
@@ -262,7 +280,8 @@ The labeled genes correspond to genes highlighted in the published Figure 5b and
 
 ---
 
-## Differences from the Original Paper
+<a id="differences-from-the-original-paper"></a>
+<img src="https://img.shields.io/badge/Differences%20from%20the%20Original%20Paper-1F4E79?style=for-the-badge" alt="Differences from the Original Paper">
 
 This repository is a **reproducible reanalysis with publication-guided visualization**, not an exact reconstruction of the authors' original computational workflow.
 
@@ -285,7 +304,8 @@ Differences in DEG counts and figure geometry are preserved transparently rather
 
 ---
 
-## Output
+<a id="output"></a>
+<img src="https://img.shields.io/badge/Output-1F4E79?style=for-the-badge" alt="Output">
 
 All generated files are written to:
 
@@ -328,7 +348,8 @@ The large GEO input files are not stored in the repository because the script do
 
 ---
 
-## Citation
+<a id="citation"></a>
+<img src="https://img.shields.io/badge/Citation-1F4E79?style=for-the-badge" alt="Citation">
 
 If you use this repository or adapt the workflow, please cite the original study and GEO dataset.
 
@@ -349,7 +370,8 @@ DOI: https://doi.org/10.1038/s41523-025-00721-2
 
 ---
 
-## Acknowledgments
+<a id="acknowledgments"></a>
+<img src="https://img.shields.io/badge/Acknowledgments-1F4E79?style=for-the-badge" alt="Acknowledgments">
 
 All credit for the original study design, biological experiments, sequencing, dataset generation, and scientific conclusions belongs to the original authors.
 
