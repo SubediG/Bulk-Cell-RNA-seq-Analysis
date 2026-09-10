@@ -391,11 +391,12 @@
       "Encoding": "UTF-8",
       "Config/pak/sysreqs": "zlib1g-dev",
       "Repository": "https://bioc-release.r-universe.dev",
+      "NeedsCompilation": "yes",
+      "Author": "Michael Love [aut, cre], Constantin Ahlmann-Eltze [ctb], Kwame Forbes [ctb], Simon Anders [aut, ctb], Wolfgang Huber [aut, ctb], RADIANT EU FP7 [fnd], NIH NHGRI [fnd], CZI [fnd]",
+      "RemoteType": "bioconductor",
       "RemoteUrl": "https://github.com/bioc/DESeq2",
       "RemoteRef": "RELEASE_3_22",
-      "RemoteSha": "d90821a3153a27b2a6b727df7188ea7a5b8929fd",
-      "NeedsCompilation": "yes",
-      "Author": "Michael Love [aut, cre], Constantin Ahlmann-Eltze [ctb], Kwame Forbes [ctb], Simon Anders [aut, ctb], Wolfgang Huber [aut, ctb], RADIANT EU FP7 [fnd], NIH NHGRI [fnd], CZI [fnd]"
+      "RemoteSha": "d90821a3153a27b2a6b727df7188ea7a5b8929fd"
     },
     "DelayedArray": {
       "Package": "DelayedArray",
