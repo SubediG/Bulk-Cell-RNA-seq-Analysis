@@ -1,97 +1,93 @@
+<a id="readme-top"></a>
+
 <div align="center">
 
-GSE264108 Neutrophil Bulk RNA-seq Reanalysis
+# GSE264108 Neutrophil Bulk RNA-seq Reanalysis
 
-mTNBC vs Healthy Donors
+**mTNBC vs Healthy Donors**
 
-<p>
-  <a href="https://www.nature.com/articles/s41523-025-00721-2">
-    <img src="https://img.shields.io/badge/Paper-npj%20Breast%20Cancer-555555?style=flat-square" alt="Paper">
-  </a>
-  <a href="https://doi.org/10.1038/s41523-025-00721-2">
-    <img src="https://img.shields.io/badge/DOI-10.1038%2Fs41523--025--00721--2-555555?style=flat-square" alt="DOI">
-  </a>
-  <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264108">
-    <img src="https://img.shields.io/badge/GEO-GSE264108-555555?style=flat-square" alt="GEO">
-  </a>
-</p>
+A reproducible, open-source reanalysis of **GSE264108** that approximates the differential-expression workflow and transcriptomic visualizations reported in the original study.
 
-A reproducible, open-source reanalysis of GSE264108 that approximates the differential-expression workflow and transcriptomic visualizations reported in the original study.
+[View Paper](https://www.nature.com/articles/s41523-025-00721-2) ·
+[View GEO Dataset](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264108) ·
+[PubMed](https://pubmed.ncbi.nlm.nih.gov/39843922/)
 
 </div>
 
-Overview
+---
 
-This repository reanalyzes the publicly available neutrophil bulk RNA-seq data from GSE264108 and generates open-source approximations of the heatmap and volcano plot associated with Figure 5 of:
+<details>
+  <summary><strong>Table of Contents</strong></summary>
 
-Bakker NAM, Garner H, van Dyk E, et al.
-Triple-negative breast cancer modifies the systemic immune landscape and alters neutrophil functionality.
-npj Breast Cancer. 2025;11:5.
-https://doi.org/10.1038/s41523-025-00721-2
+  <ol>
+    <li><a href="#about-the-project">About the Project</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#differences-from-the-original-paper">Differences from the Original Paper</a></li>
+    <li><a href="#output">Output</a></li>
+    <li><a href="#citation">Citation</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
 
-The analysis compares peripheral-blood neutrophils from:
+</details>
 
-7 patients with metastatic triple-negative breast cancer (mTNBC)
+---
 
-7 healthy donors (HDs)
+## About the Project
 
-The statistical analysis is performed with DESeq2 using the public GEO count matrix. The heatmap and volcano plot are recreated with open-source R packages and are intended to be publication-guided approximations rather than exact replicas of the original Qlucore figures.
+This project reanalyzes the publicly available neutrophil bulk RNA-seq dataset **GSE264108** from the study:
 
-Results summary
+> **Bakker NAM, Garner H, van Dyk E, et al.**  
+> *Triple-negative breast cancer modifies the systemic immune landscape and alters neutrophil functionality.*  
+> **npj Breast Cancer. 2025;11:5.**  
+> https://doi.org/10.1038/s41523-025-00721-2
 
-Metric
+The dataset contains peripheral-blood neutrophils from:
 
-Result
+- **7 patients with metastatic triple-negative breast cancer (mTNBC)**
+- **7 healthy donors (HDs)**
 
-Samples
+The goal of this repository is to provide a transparent and reproducible reanalysis of the public count data and to generate **publication-guided approximations** of the transcriptomic heatmap and volcano plot shown in Figure 5.
 
-14
+The figures are not intended to be exact replicas of the original Qlucore output.
 
-Healthy donors
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-7
+---
 
-mTNBC
+## Results
 
-7
+| Metric | Result |
+|---|---:|
+| Samples | 14 |
+| Healthy donors | 7 |
+| mTNBC | 7 |
+| Genes in raw count matrix | 23,567 |
+| Significant DEGs | **122** |
+| Upregulated in mTNBC | **77** |
+| Downregulated in mTNBC | **45** |
+| Significance threshold | `padj < 0.05` |
 
-Genes in raw count matrix
+The original paper reports **127 differentially expressed genes (90 upregulated and 37 downregulated)**.
 
-23,567
+This workflow identifies **122 differentially expressed genes (77 upregulated and 45 downregulated)** from the deposited raw count matrix.
 
-Significant DEGs
-
-122
-
-Upregulated in mTNBC
-
-77
-
-Downregulated in mTNBC
-
-45
-
-Significance threshold
-
-padj < 0.05
-
-The original paper reports 127 DEGs (90 upregulated and 37 downregulated).
-This workflow identifies 122 DEGs (77 upregulated and 45 downregulated) from the deposited count matrix.
-
-Approximate reconstruction of Figure 5
+### Approximate reconstruction of Figure 5
 
 <table>
 <tr>
 <td width="50%" align="center">
 
-<strong>Figure 5a. Neutrophil transcriptomics heatmap</strong>
+<strong>Figure 5a. Neutrophil transcriptomics</strong>
 
 <img src="results/Figure5a_heatmap.png" width="100%" alt="Neutrophil transcriptomics heatmap">
 
 </td>
 <td width="50%" align="center">
 
-<strong>Figure 5b. Differential gene-expression volcano plot</strong>
+<strong>Figure 5b. Differential gene expression</strong>
 
 <img src="results/Figure5b_volcano.png" width="100%" alt="Differential expression volcano plot">
 
@@ -99,10 +95,106 @@ Approximate reconstruction of Figure 5
 </tr>
 </table>
 
-These panels are approximate reconstructions based on the public data and methods reported in the paper. They are not expected to be pixel-for-pixel identical to the published figures because the exact internal Qlucore visualization settings were not fully reported.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Analysis workflow
+---
 
+## Built With
+
+The analysis is implemented entirely in **R** using open-source packages.
+
+- **DESeq2** — differential-expression analysis
+- **ComplexHeatmap** — heatmap visualization
+- **ggplot2** — volcano plot visualization
+- **ggrepel** — gene-label placement
+- **circlize** — heatmap color mapping
+- **renv** — reproducible R package environment
+
+The original publication used **DESeq2** for differential-expression analysis and **Qlucore Omics Explorer 3.8** for RNA-seq visualization.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Getting Started
+
+Follow the steps below to run the analysis on your own computer.
+
+### Prerequisites
+
+Install:
+
+- [Git](https://git-scm.com/downloads)
+- [R](https://cran.r-project.org/)
+
+Optional:
+
+- [RStudio Desktop](https://posit.co/download/rstudio-desktop/)
+
+Docker, Conda, Qlucore, and manual GEO downloads are **not required**.
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/SubediG/Bulk-Cell-RNA-seq-Analysis.git
+cd Bulk-Cell-RNA-seq-Analysis
+```
+
+2. Start R from the repository directory:
+
+```bash
+R
+```
+
+3. Install `renv`:
+
+```r
+install.packages("renv")
+```
+
+4. Restore the project environment:
+
+```r
+renv::restore()
+```
+
+5. Confirm that the environment is synchronized:
+
+```r
+renv::status()
+```
+
+A correctly restored project should report:
+
+```text
+No issues found -- the project is in a consistent state.
+```
+
+6. Exit R if you want to run the analysis from the command line:
+
+```r
+q()
+```
+
+7. Run the analysis:
+
+```bash
+Rscript DESeq2_mTNBC_Analysis.R
+```
+
+The required GEO files are downloaded automatically during the first run.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Usage
+
+The workflow performs the following steps:
+
+```mermaid
 flowchart LR
     A["GEO GSE264108"] --> B["Raw counts"]
     B --> C["DESeq2"]
@@ -115,173 +207,95 @@ flowchart LR
     H --> I["Row Z-score"]
     I --> J["Hierarchical clustering"]
     J --> K["Heatmap"]
+```
 
-Methods
+### Differential expression
 
-Differential expression
+DESeq2 is run using the **raw count matrix**.
 
-DESeq2 is run on the raw gene-count matrix.
-
-Comparison:
-
+```text
 mTNBC vs Healthy
+```
 
 Interpretation:
 
+```text
 positive log2 fold change  = higher expression in mTNBC
 negative log2 fold change  = higher expression in Healthy donors
+```
 
 Significant genes are defined as:
 
+```text
 padj < 0.05
+```
 
-Heatmap
+### Heatmap
 
 The heatmap uses:
 
-genes significant by DESeq2
+- DESeq2-significant genes
+- the GEO-deposited normalized count matrix
+- row-wise Z-score scaling
+- Euclidean distance
+- average-linkage hierarchical clustering
 
-the GEO-deposited normalized count matrix
-
-row-wise Z-score scaling
-
-Euclidean distance
-
-average-linkage hierarchical clustering
-
-ComplexHeatmap for visualization
-
-The original study used Qlucore Omics Explorer 3.8 for visualization. The exact Qlucore workflow is not fully available, so this heatmap should be interpreted as an open-source approximation of the published panel.
-
-Volcano plot
+### Volcano plot
 
 The volcano plot displays:
 
+```text
 x-axis = log2 fold change
 y-axis = -log10(raw p-value)
+```
 
 Visual thresholds:
 
+```text
 p < 0.05
 |log2FC| > 1
+```
 
-The labeled genes correspond to those shown in the published Figure 5b and are used for visualization only. Statistical significance remains defined by padj < 0.05.
+The labeled genes correspond to genes highlighted in the published Figure 5b and are used for visual comparison only.
 
-Original paper vs this repository
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Component
+---
 
-Original paper
+## Differences from the Original Paper
 
-This repository
+This repository is a **reproducible reanalysis with publication-guided visualization**, not an exact reconstruction of the authors' original computational workflow.
 
-Differential expression
+| Component | Original paper | This repository |
+|---|---|---|
+| Dataset | GSE264108 | GSE264108 |
+| Comparison | mTNBC vs Healthy donors | mTNBC vs Healthy donors |
+| Differential expression | DESeq2 | DESeq2 |
+| Reported R version | R 4.1.0 | Recorded in `renv.lock` and `sessionInfo.txt` |
+| Visualization | Qlucore 3.8 | ComplexHeatmap + ggplot2 |
+| Heatmap input | Exact Qlucore workflow not fully reported | GEO normalized count matrix |
+| Clustering | Qlucore | Euclidean distance + average linkage |
+| DEG count | **127** | **122** |
+| Up / Down | **90 / 37** | **77 / 45** |
+| Volcano labels | Selected genes shown by authors | Same genes labeled for visual comparison |
 
-DESeq2
+Differences in DEG counts and figure geometry are preserved transparently rather than adjusting thresholds or preprocessing to force an exact match.
 
-DESeq2
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Reported R version
+---
 
-R 4.1.0
+## Output
 
-Recorded in renv.lock and sessionInfo.txt
+All generated files are written to:
 
-RNA-seq visualization
-
-Qlucore 3.8
-
-ComplexHeatmap and ggplot2
-
-Heatmap input
-
-Exact Qlucore workflow not fully reported
-
-GEO normalized count matrix
-
-Clustering
-
-Qlucore
-
-Euclidean distance + average linkage
-
-DEG count
-
-127
-
-122
-
-Up / Down
-
-90 / 37
-
-77 / 45
-
-Volcano labels
-
-Selected genes shown by authors
-
-Same labels used for visual comparison
-
-This project is best described as a reproducible reanalysis with publication-guided visualization, rather than an exact reproduction of the authors' original computational workflow.
-
-Run the analysis
-
-1. Clone the repository
-
-git clone https://github.com/SubediG/Bulk-Cell-RNA-seq-Analysis.git
-cd Bulk-Cell-RNA-seq-Analysis
-
-2. Install R
-
-Install R from:
-
-https://cran.r-project.org/
-
-RStudio is optional:
-
-https://posit.co/download/rstudio-desktop/
-
-3. Restore the project environment
-
-Start R from the repository folder:
-
-R
-
-Then run:
-
-install.packages("renv")
-renv::restore()
-renv::status()
-
-A correctly restored environment should report:
-
-No issues found -- the project is in a consistent state.
-
-4. Run the analysis
-
-From the repository root:
-
-Rscript DESeq2_mTNBC_Analysis.R
-
-The GEO files are downloaded automatically and the outputs are written to:
-
+```text
 results/
+```
 
-RStudio option
+Expected output:
 
-Open:
-
-Bulk-Cell-RNA-seq-Analysis.Rproj
-
-Then run:
-
-install.packages("renv")
-renv::restore()
-source("DESeq2_mTNBC_Analysis.R")
-
-Output files
-
+```text
 results/
 ├── DESeq2_results.csv
 ├── DESeq2_significant_genes.csv
@@ -292,44 +306,53 @@ results/
 ├── Figure5b_volcano.png
 ├── Figure5b_volcano.pdf
 └── sessionInfo.txt
+```
 
-Reproducibility
+### Repository structure
 
-The repository uses:
+```text
+Bulk-Cell-RNA-seq-Analysis/
+├── DESeq2_mTNBC_Analysis.R
+├── Bulk-Cell-RNA-seq-Analysis.Rproj
+├── README.md
+├── renv.lock
+├── .Rprofile
+├── data/
+├── results/
+└── renv/
+```
 
-automatic GEO data retrieval
+The large GEO input files are not stored in the repository because the script downloads them automatically.
 
-relative file paths
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-renv.lock for package versions
+---
 
-explicit sample-count checks
+## Citation
 
-explicit statistical thresholds
+If you use this repository or adapt the workflow, please cite the original study and GEO dataset.
 
-sessionInfo.txt for software documentation
+### Original study
 
-No Docker, Conda, Qlucore, or manual data download is required.
+**Bakker NAM, Garner H, van Dyk E, et al.**  
+*Triple-negative breast cancer modifies the systemic immune landscape and alters neutrophil functionality.*  
+**npj Breast Cancer. 2025;11:5.**
 
-Citation
+DOI: https://doi.org/10.1038/s41523-025-00721-2
 
-Original study
+- [Original article](https://www.nature.com/articles/s41523-025-00721-2)
+- [PubMed](https://pubmed.ncbi.nlm.nih.gov/39843922/)
+- [Author information](https://www.nature.com/articles/s41523-025-00721-2#author-information)
+- [GEO accession GSE264108](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264108)
 
-Bakker NAM, Garner H, van Dyk E, et al.
-Triple-negative breast cancer modifies the systemic immune landscape and alters neutrophil functionality.
-npj Breast Cancer. 2025;11:5.
-https://doi.org/10.1038/s41523-025-00721-2
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Links
+---
 
-Original article
+## Acknowledgments
 
-PubMed
+All credit for the original study design, biological experiments, sequencing, dataset generation, and scientific conclusions belongs to the original authors.
 
-Author information
+This repository is an independent reproducibility project based on publicly available data and is not the authors' original analysis repository.
 
-GEO accession GSE264108
-
-Disclaimer
-
-This is an independent reproducibility project based on publicly available data. It is not the original authors' analysis repository, does not claim exact reproduction of the published visualizations, and is not intended for clinical use.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
