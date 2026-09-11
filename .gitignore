@@ -5,5 +5,8 @@
 
 data/*.gz
 
+results/*
+!results/.gitkeep
+
 renv/library/
 renv/staging/
