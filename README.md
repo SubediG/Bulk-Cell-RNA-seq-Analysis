@@ -155,11 +155,7 @@ You need:
 - [Git](https://git-scm.com/downloads)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-Docker Desktop installation instructions are available for each operating system:
-
-- **macOS:** https://docs.docker.com/desktop/setup/install/mac-install/
-- **Windows:** https://docs.docker.com/desktop/setup/install/windows-install/
-- **Linux:** https://docs.docker.com/desktop/setup/install/linux/
+Docker Desktop installation instructions are available for each operating system in above link.
 
 ### Install and start Docker Desktop
 
